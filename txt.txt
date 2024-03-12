@@ -1,0 +1,139 @@
+
+    //------------------laptopLarge---------------------------
+    @media (max-width: 1920px) {
+        //------------------section1-logo---------------------------
+        .logoContainer .logo {
+            width: 18.75rem; height: 6rem;
+        }
+        //------------------section2-progressBar---------------------------
+        .progressBarContainer {.progressBar{height: .7rem;}}
+        //------------------section_3-heroSection---------------------------
+        .heroSection {
+            .heroText {
+                .title {@include fontSize(veryLarge);}
+                .description {@include fontSize(extraSmall);}
+            }
+            .cmsBasicFlow {
+                .step {
+                    img {width: 5rem;}
+                    figcaption {@include fontSize(extraSmall);}
+                }
+            }
+        }
+    }
+
+    
+    //------------------laptopMedium---------------------------
+    @media (max-width: 1440px) {
+        //------------------section1-logo---------------------------
+        .logoContainer .logo {
+            width: 18.75rem; height: 6rem;
+        }
+        //------------------section2-progressBar---------------------------
+        .progressBarContainer {.progressBar{height: .7rem;}}
+        //------------------section_3-heroSection---------------------------
+        .heroSection {
+            .heroText {
+                .title {@include fontSize(veryLarge);}
+                .description {@include fontSize(extraSmall);}
+            }
+            .cmsBasicFlow {
+                .step {
+                    img {width: 5rem;}
+                    figcaption {@include fontSize(extraSmall);}
+                }
+            }
+        }
+    }
+
+
+    //------------------laptopSmall---------------------------
+    @media (max-width: 1024px) {
+        //------------------section1-logo---------------------------
+        .logoContainer .logo {
+            width: 15.625rem; height: 5rem;
+        }
+        //------------------section2-progressBar---------------------------
+        .progressBarContainer {.progressBar{height: .6rem;}}
+    }
+
+
+    //------------------tablet---------------------------
+    @media (max-width: 768px) {
+        //------------------section1-logo---------------------------
+        .logoContainer .logo {
+            width: 13.75rem; height: 4.375rem;
+        }
+        //------------------section2-progressBar---------------------------
+        .progressBarContainer {.progressBar{height: .5rem;}}
+    }
+
+
+    //------------------mobileLarge---------------------------
+    @media (max-width: 426px) {
+        //------------------section1-logo---------------------------
+        .logoContainer .logo {
+            width: 10rem; height: 3.125rem;
+        }
+        //------------------section2-progressBar---------------------------
+        .progressBarContainer {.progressBar{height: .4rem;}}
+    }
+
+
+    //------------------mobileMedium---------------------------
+    @media (max-width: 376px) {
+        //------------------section1-logo---------------------------
+        .logoContainer .logo {
+            width: 8.125rem; height: 2.5rem;
+        }
+        //------------------section2-progressBar---------------------------
+        .progressBarContainer {.progressBar{height: .3rem;}}
+    }
+
+
+    //------------------mobileSmall---------------------------
+    @media (max-width: 321px) {
+        //------------------section1-logo---------------------------
+        .logoContainer .logo {
+            width: 6.25rem; height: 1.875;
+        }
+        //------------------section2-progressBar---------------------------
+        .progressBarContainer {.progressBar{height: .2rem;}}
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    //headingSize
+    @mixin fontSize($size) {
+        @if $size == extraLarge {font-size: 7rem;}
+        @else if $size == veryLarge {font-size: 5rem;}
+        @else if $size == large {font-size: 4rem;}
+        @else if $size == medium {font-size: 3rem;}
+        @else if $size == small {font-size: 2rem;}
+        @else if $size == verySmall {font-size: 1.5rem;}
+        @else if $size == extraSmall {font-size: 1rem;}
+    }
+
+        // headingSize
+    @mixin fontSize($size) {
+        @if $size == extraLarge {font-size: 6vw;}
+        @else if $size == veryLarge {font-size: 5vw;}
+        @else if $size == large {font-size: 4vw;}
+        @else if $size == medium {font-size: 3vw;}
+        @else if $size == small {font-size: 2vw;}
+        @else if $size == verySmall {font-size: 1.5vw;}
+        @else if $size == extraSmall {font-size: 1vw;}
+        @else if $size == xxSmall {font-size: .7vw;}
+    }

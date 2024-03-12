@@ -1,0 +1,417 @@
+//------------------globalProperties---------------------------
+:root {box-sizing: border-box; font-size: 16px;}
+* {box-sizing: inherit; transition: all .2s ease; margin: 0; padding: 0;}
+address {height: 100vh;}
+
+
+//------------------fontFamily---------------------------
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+    //fonts
+    $primary-font : "Raleway", sans-serif; /*600:semibold, 800:extrabold*/
+    $secondary-font: "Roboto", sans-serif; /*400:regular, 500:medium*/
+    //font-categories
+    %heading-font {font-family: $primary-font; font-weight: 800;} /*raleway - extrabold*/
+    %description-font {font-family: $secondary-font; font-weight: 400;} /*roboto - regular*/
+    %button-font {font-family: $primary-font; font-weight: 600;} /*raleway - semibold*/
+    %identifier-font {font-family: $secondary-font; font-weight: 500;} /*roboto - medium*/
+
+
+//------------------colors---------------------------
+    //brand
+    $brand : rgba(27, 67, 77, 1);
+    $brand-transparent-forBg: rgba(27, 67, 77, .9);
+    $brand-transparent-forTxt: rgba(27, 67, 77, .6);
+    $brand-lightVersion: rgba(19, 96, 116, 1);
+    //black
+    $black: rgba(0, 0, 0, 1);
+    $black-transparent-forBg: rgba(0, 0, 0, 0.85);
+    $black-transparent-forTxt: rgba(0, 0, 0, 0.6);
+    //skyblue
+    $skyblue: rgba(192, 250, 255, 1);
+    $skyblue-transparent: rgba(192, 250, 255, .6);
+    //white
+    $white: rgba(255, 255, 255, 1);
+    $white-transparent-forTxt: rgba(255, 255, 255, 0.6);
+    //topaz
+    $topaz: rgba(10, 179, 193, 1);
+
+
+//------------------templates---------------------------
+    //elementArrangement
+    @mixin arrange($dir, $justifyContent, $alignItems, $gap) {display: flex; flex-flow: $dir wrap; justify-content: $justifyContent; align-items: $alignItems; gap: $gap;}
+    //elementPostion  - only applicable when '.container {position: relative;}'
+    @mixin position($elementPostion) {
+        @if $elementPostion == centerLeft {position: absolute; top: 50%; left: 0; transform: translateY(-50%);}
+        @else if $elementPostion == center {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+        @else if $elementPostion == centerRight {position: absolute; top: 50%; left: 100%; transform: translate(-100%, -50%);}
+    }
+    //background
+    @mixin bgImg($url) {background: url($url) no-repeat scroll center; background-size: 100% 100%;}
+    // headingSize
+    @mixin fontSize($size) {
+        @if $size == extraLarge {font-size: 6vw;}
+        @else if $size == veryLarge {font-size: 5vw;}
+        @else if $size == large {font-size: 4vw;}
+        @else if $size == medium {font-size: 3vw;}
+        @else if $size == small {font-size: 2vw;}
+        @else if $size == verySmall {font-size: 1.5vw;}
+        @else if $size == extraSmall {font-size: 1vw;}
+    }
+    
+    //buttons
+    @mixin filledButton($bgColor, $txtColor, $hoverBgColor, $hoverTxtColor) {
+        background: $bgColor; color: $txtColor; cursor: pointer;
+        border: .1em solid $bgColor; border-radius: .5em; padding: .5em 1.5em; 
+        @extend %button-font; @include fontSize(extraSmall);
+        &:hover {background: $hoverBgColor; color: $hoverTxtColor; border: .1em solid $hoverBgColor;}
+    }
+    @mixin noFilledButton($color, $hoverBgColor, $hoverTxtColor) {
+        color: $color; cursor: pointer; background: none;
+        border: .1em solid $color; border-radius: .5em; padding: .5em 1.5em;
+        @extend %button-font; @include fontSize(extraSmall);
+        &:hover {background: $hoverBgColor; color: $hoverTxtColor; border: .1em solid $hoverBgColor;}
+    }
+
+
+
+/*------------------------------------------------------------styling code starts here(2560px)------------------------------------------------------------*/
+
+
+
+    //section_1_2-logoProgressBar
+    .sticky-logoProgressBar {position: sticky; top: 0; z-index: 100;}
+        // section1-logo
+        .logoContainer {
+            background: $brand;
+            @include arrange(flex, center, center, 0);
+            .logo {width: 10vw;}
+        }
+        // section2-progressBar
+        .progressBarContainer {
+            display: flex;
+            .progressBar {
+                position: relative; height: .3vw; width: 100%;
+                .progressIndicator {
+                    position: absolute; height: 100%; width: 0; background: black;
+                }
+            }
+        }
+
+
+    //section_3-heroSection
+    .heroSection {
+        background: linear-gradient(to right, $brand-transparent-forBg, $brand-transparent-forBg), url('gallery/s3 - heroSection/heroSectionBgImg.jpg') no-repeat scroll center; background-size: 100% 100%;
+        @include arrange(column, center, center, 5vw); padding: 5vw 0;
+        // heroText
+        .heroText {
+            text-align: center; @include arrange(column, center, center, 1.5vw);
+            .title {
+                @extend %heading-font;
+                @include fontSize(large);
+                span:nth-child(1) {color: $skyblue-transparent;}
+                span:nth-child(2) {color: $skyblue;}
+            }
+            hr {display: block; width: 30vw; opacity: .4;}
+            .description {
+                @extend %description-font; @include fontSize(extraSmall); color: $skyblue; letter-spacing: .1em;
+            }
+        }
+        // cmsBasicFlow
+        .cmsBasicFlow {
+            @include arrange(row, center, center, 1.5vw);
+            text-align: center; @extend %identifier-font; @include fontSize(extraSmall); color: $white; letter-spacing: .1em;
+            .step {
+                @include arrange(column, center, center, 1em);
+                img {width: 3vw;}
+            }
+        }
+        // CTA1
+        .CTA1 {@include filledButton($white, $black, $skyblue, $brand);}
+
+    }
+
+
+    // siteCategories
+    .siteCategories {
+        overflow: hidden; padding: 5vw 0;
+        .upper, .lower {
+            @include arrange(row, flex-start, flex-start, 1em); flex-wrap: nowrap; margin: 1em;
+            .theme {
+                min-width: 25vw; height: 15vw; border-radius: .5em; position: relative; overflow: hidden;
+                .themeOverlay {
+                    position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+                    background: $black-transparent-forBg;
+                    button {
+                        @include noFilledButton($white, $white, $black);
+                        @include position(center);
+                    }
+                }
+                &:hover .themeOverlay {left: 0;}
+            }
+        }
+        .upper {
+            animation: toRight 15s linear infinite; justify-content: flex-end;
+            &:hover {animation-play-state: paused;}
+            .ecom {@include bgImg('gallery/s4-siteTypes/1-ecommerceSite.gif');}
+            .newspaper {@include bgImg('gallery/s4-siteTypes/2-newspaper&MagazineSite.jpg');}
+            .business {@include bgImg('gallery/s4-siteTypes/3-businessSite.gif');}
+        }
+        @keyframes toRight{
+            0% {transform: translateX(-100%);}
+            100% {transform: translateX(200%);}
+        }
+        .lower {
+            animation: toLeft 20s linear infinite;
+            &:hover {animation-play-state: paused;}
+            .article {@include bgImg('gallery/s4-siteTypes/4-articleSite.jpg');}
+            .event {@include bgImg('gallery/s4-siteTypes/5-eventSite.jpg');}
+            .portfolio {@include bgImg('gallery/s4-siteTypes/6-portfolioSite.jpg');}
+            .appointment {@include bgImg('gallery/s4-siteTypes/7-appointmentSite.jpg');}
+        }
+        @keyframes toLeft {
+            0% {transform: translateX(100%);}
+            100% {transform: translateX(-300%);}
+        }
+    }
+
+
+    // features
+    .features {
+        img {width: 10vw;}
+        background: $black; color: $topaz; padding: 7vw 0;
+        @include arrange(column, center, center, 1.5vw);
+        .upper, .mid, .lower {
+            @include arrange(row, center, center, 1.5vw);
+            .feature {
+                height: 27vw; width: 22vw; perspective: 500px; position: relative;
+                .featureCover {
+                    position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 3; background: $black;
+                    @include arrange(column, center, center, 3vh); border: .3vw solid $topaz;  border-radius: .7em;
+                    img {width: 10vw;}
+                    .featureTitle {
+                        @extend %heading-font; @include fontSize(small); text-align: center;
+                    }
+                }
+                .featureContent {
+                    position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: $topaz; color: white; z-index: 2;
+                    @include arrange(column, flex-start, flex-start, 1vw); padding: 1.5vw; text-align: left; border: .3vw solid $topaz;  border-radius: .7em;
+                    img {width: 5vw;}
+                    .featureTitle {
+                        @extend %heading-font; @include fontSize(verySmall);
+                    }
+                    .featureDescription {
+                        @extend %description-font; @include fontSize(extraSmall); margin: 1vw 0 0 0;
+                    }
+                }
+            }
+            .featureHero {
+                background: $topaz; color: $white; border-color: $topaz;
+                @include arrange(column, flex-start, flex-start, 1.5vw); padding: 1.5vw;
+                .title {@include fontSize(medium); @extend %heading-font;}
+                .description {@include fontSize(verySmall); @extend %description-font;}
+                .viewAllFeatures {@include filledButton($white, $topaz, $black, $topaz); margin: 2vw 0 0 0;}
+            }
+        }
+    }
+
+
+    //designInt
+    .designInt {
+        width: 80vw; margin: 20vw auto 0;
+        @include arrange(row, center, center, 6vw);
+        .heroText {
+            .heroTitle {@extend %heading-font; @include fontSize(large); color: $brand;}
+            .heroDescription {@extend %description-font; @include fontSize(verySmall); color: $black;}
+            .heroButton {@include filledButton($brand, $white, $black, $white); padding: .5em 1.5em; margin: 4vw 0 0 0;}
+            @include arrange(column, center, flex-start, 2vw);
+        }
+        .heroImg {
+            width: 25vw;
+        }
+    }
+
+
+    //ecomInt
+    .ecomInt {
+        width: 80vw; margin: 20vw auto 0;
+        @include arrange(row, center, center, 6vw);
+        .heroText {
+            .heroTitle {@extend %heading-font; @include fontSize(large); text-align: right; color: $brand;}
+            .heroDescription {@extend %description-font; @include fontSize(verySmall); text-align: right; color: $black;}
+            .heroButton {@include filledButton($brand, $white, $black, $white); padding: .5em 1.5em; margin: 4vw 0 0 0;}
+            @include arrange(column, center, flex-end, 2vw);
+        }
+        .heroImg {
+            width: 25vw;
+        }
+    }
+
+
+    
+    //platforms
+    .platforms {
+        width: 80vw; margin: 20vw auto 0;
+        @include arrange(column, center, center, 3vw);
+        .platformsContainer {
+            @include arrange(row, center, center, 3vw);
+            border-bottom: .1rem solid $black-transparent-forBg; padding: 0 0 5vw 0;
+            img {width: 10vw;}
+        }
+        p {@extend %heading-font; @include fontSize(small); color: $brand-transparent-forTxt;}
+        .getApp {@include filledButton($brand, $white, $black, $white);}
+    }
+
+
+
+    //whyUs
+    .whyUsTitle {@extend %heading-font; @include fontSize(large); text-align: center; color: $brand-lightVersion; margin: 20vw 0 7vw 0;}
+    .whyUs {
+        width: 80vw; margin: 0 auto;
+        @include arrange(row, center, center, 6vw); flex-wrap: nowrap;
+        .reasons {
+            .reason {
+                margin: 0 0 4vw 0;
+                @include arrange(row, flex-start, flex-start, 2vw); flex-wrap: nowrap;
+                img {width: 7vw;}
+                .reasonText {
+                    .title {@extend %heading-font; @include fontSize(small); color: $brand-lightVersion; margin: 0 0 1.5vw 0;}
+                    .description {@extend %description-font; @include fontSize(extraSmall); color: $black-transparent-forTxt;}
+                }
+            }
+        }
+    }
+
+
+
+    //review
+    .review {
+        margin: 20vw 0 0 0; 
+        .sectionTitle {@extend %heading-font; @include fontSize(large); text-align: center; color: $topaz; margin: 0 0 5vw 0;}
+        .sliderContainer {
+            width: 65vw; margin: 0 auto; position: relative; overflow: hidden; border-radius: 1vw;
+            .reviewSlidesContainer {
+                display: flex; 
+                .reviewSlide {
+                    min-width: 100%; background: $topaz;  color: $white; padding: 2vw;
+                    img, span, p {display: block; text-align: center;}
+                    @include arrange(column, center, center, 0.5vw);
+                    .userImage {width: 8.5vw; height: 8.5vw; border: .1em solid $topaz; border-radius: 50%;}
+                    .userName {@extend %identifier-font; @include fontSize(small);}
+                    .reviewImg {height: 1.5vw;}
+                    p {@extend %description-font; @include fontSize(verySmall); margin: 1.5vw 0 0 0;}
+                }
+            }
+            button {position: absolute; @include fontSize(medium); @include noFilledButton($white, $topaz, $white); border-color: $topaz}
+            .toPrev {@include position(centerLeft);}
+            .toNext {@include position(centerRight);}
+        }
+    }
+
+    //lastCTA
+    .lastCTA {
+        text-align: center; @include arrange(column, center, center, 3vw); margin: 20vw 0 0 0;
+        .ctaTitle {@extend %heading-font; @include fontSize(large); color: $brand-lightVersion}
+        .ctaSubtitle {@extend %description-font; @include fontSize(small); color: $brand-lightVersion;}
+        .newsletter {
+            background: $brand-lightVersion; width: 55vw;
+            @include arrange(column, center, center, 0.7vw);
+            padding: 3.5vw 0; border-radius: 1vw;
+            .nlTitle {@extend %heading-font; @include fontSize(small); color: $white;}
+            .nlSubtitle {@extend %description-font; @include fontSize(extraSmall); color: $white-transparent-forTxt;}
+            form {
+                @include arrange(row, center, center, 0); flex-wrap: nowrap; margin: 2vw 0 0 0;
+                input[type=email] {@include fontSize(extraSmall); @extend %identifier-font; width: 22vw; border: .1vw solid $white; background: none; border-radius: 1.5vw 0 0 1.5vw; color: $white; &::placeholder{color: $white-transparent-forTxt;}}
+                input[type=submit] {@include fontSize(extraSmall); @extend %button-font; width: 7vw; text-align: center; border: .1em solid $white; background: $white; color: $brand-lightVersion; border-radius: 0 1.5vw 1.5vw 0; cursor: pointer;}
+                input {padding: .8vw 1.5vw;}
+            }
+        }
+        .cta {@include noFilledButton($brand-lightVersion, $black, $white);}
+    }
+
+
+    //footer styling
+    .footer {
+        padding: 2vw 5vw; margin: 20vw 0 0 0; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 4vw; background: aliceblue; background: $brand;
+    }
+    .linkContainer {
+        display: flex; gap: 4vw; 
+    }
+    .ftxt {display: block; margin: 0 0 1vw 0; @extend %heading-font; @include fontSize(verySmall); color: $white;}
+    .link {display: block; text-decoration: none; color: gray; font-size: .7vw; margin: .5vw 0 0 0; @extend %button-font; @include fontSize(extraSmall); color: $white-transparent-forTxt; &:hover {color: $white;}}
+    .link--logo {font-size: 1.5vw; display: flex; justify-content: center; align-items: center;}
+    .link--logo img {margin: 0 0.3vw 0 0; border-radius: 50%; height: 15vw; width: 15vw;}
+    .privacy {display: flex; gap: 1vw;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @media (max-width:768px) {
+        //s1
+        .sticky-logoProgressBar {
+            .logoContainer {
+                .logo {width: 20vw;}
+            }
+        }
+        //s3
+        .heroSection {
+            gap: 10vw;
+            .heroText {
+                gap: 3vw;
+                .title {font-size: 6vw;}
+                hr {width: 65vw;}
+                .description {font-size: 1.8vw;}
+            }
+            .cmsBasicFlow {
+                font-size: 1.8vw;
+                .step {
+                    img {width: 5vw;}
+                }
+            }
+            .CTA1 {font-size: 1.8vw;}
+        }
+
+        //s4
+        .siteCategories {
+            .upper, .lower {.theme{min-width: 35vw; height: 20vw;}}
+        }
+
+
+        /*
+    fontSize($size); 
+    extraLarge(6), 
+    veryLarge(5), 
+    large(4), 
+    medium(3), 
+    small(2), 
+    verySmall(1.5), 
+    extraSmall(1)
+    ------fonts-------
+    %heading-font, %description-font, %button-font, %identifier-font
+
+    ------colors-------
+    $brand, $brand-transparent-forBg, $brand-transparent-forTxt, $brand-lightVersion
+    $black, $black-transparent-forBg, $black-transparent-forTxt
+    $skyblue, $skyblue-transparent
+    $white, $white-transparent-forTxt
+    $topaz
+
+    ------templates-------
+    arrange($dir, $justifyContent, $alignItems, $gap)
+    bgImg($url);
+    position($elementPostion); centerLeft, center, centerRight (when '.container {position: relative;}')
+    fontSize($size); extraLarge(6), veryLarge(5), large(4), medium(3), small(2), verySmall(1.5), extraSmall(1)
+    filledButton($bgColor, $txtColor, $hoverBgColor, $hoverTxtColor)
+    noFilledButton($color, $hoverBgColor, $hoverTxtColor)
+*/
+
+    }

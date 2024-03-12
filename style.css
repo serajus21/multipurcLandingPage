@@ -1,0 +1,811 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+:root {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+* {
+  box-sizing: inherit;
+  transition: all 0.2s ease;
+  margin: 0;
+  padding: 0;
+}
+
+address {
+  height: 100vh;
+}
+
+/*600:semibold, 800:extrabold*/
+/*400:regular, 500:medium*/
+.ftxt, .lastCTA .newsletter .nlTitle, .lastCTA .ctaTitle, .review .sectionTitle, .whyUs .reasons .reason .reasonText .title, .whyUsTitle, .platforms p, .ecomInt .heroText .heroTitle, .designInt .heroText .heroTitle, .features .upper .featureHero .title, .features .mid .featureHero .title, .features .lower .featureHero .title, .features .upper .feature .featureContent .featureTitle, .features .mid .feature .featureContent .featureTitle, .features .lower .feature .featureContent .featureTitle, .features .upper .feature .featureCover .featureTitle, .features .mid .feature .featureCover .featureTitle, .features .lower .feature .featureCover .featureTitle, .heroSection .heroText .title {
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+} /*raleway - extrabold*/
+.lastCTA .newsletter .nlSubtitle, .lastCTA .ctaSubtitle, .review .sliderContainer .reviewSlidesContainer .reviewSlide p, .whyUs .reasons .reason .reasonText .description, .ecomInt .heroText .heroDescription, .designInt .heroText .heroDescription, .features .upper .featureHero .description, .features .mid .featureHero .description, .features .lower .featureHero .description, .features .upper .feature .featureContent .featureDescription, .features .mid .feature .featureContent .featureDescription, .features .lower .feature .featureContent .featureDescription, .heroSection .heroText .description {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+} /*roboto - regular*/
+.link, .lastCTA .cta, .lastCTA .newsletter form input[type=submit], .review .sliderContainer button, .platforms .getApp, .ecomInt .heroText .heroButton, .designInt .heroText .heroButton, .features .upper .featureHero .viewAllFeatures, .features .mid .featureHero .viewAllFeatures, .features .lower .featureHero .viewAllFeatures, .siteCategories .upper .theme .themeOverlay button, .siteCategories .lower .theme .themeOverlay button, .heroSection .CTA1 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+} /*raleway - semibold*/
+.lastCTA .newsletter form input[type=email], .review .sliderContainer .reviewSlidesContainer .reviewSlide .userName, .heroSection .cmsBasicFlow {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+} /*roboto - medium*/
+/*------------------------------------------------------------styling code starts here(2560px)------------------------------------------------------------*/
+.sticky-logoProgressBar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logoContainer {
+  background: rgb(27, 67, 77);
+  display: flex;
+  flex-flow: flex wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+.logoContainer .logo {
+  width: 10vw;
+}
+
+.progressBarContainer {
+  display: flex;
+}
+.progressBarContainer .progressBar {
+  position: relative;
+  height: 0.3vw;
+  width: 100%;
+}
+.progressBarContainer .progressBar .progressIndicator {
+  position: absolute;
+  height: 100%;
+  width: 0;
+  background: black;
+}
+
+.heroSection {
+  background: linear-gradient(to right, rgba(27, 67, 77, 0.9), rgba(27, 67, 77, 0.9)), url("gallery/s3 - heroSection/heroSectionBgImg.jpg") no-repeat scroll center;
+  background-size: 100% 100%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5vw;
+  padding: 5vw 0;
+}
+.heroSection .heroText {
+  text-align: center;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5vw;
+}
+.heroSection .heroText .title {
+  font-size: 4vw;
+}
+.heroSection .heroText .title span:nth-child(1) {
+  color: rgba(192, 250, 255, 0.6);
+}
+.heroSection .heroText .title span:nth-child(2) {
+  color: rgb(192, 250, 255);
+}
+.heroSection .heroText hr {
+  display: block;
+  width: 30vw;
+  opacity: 0.4;
+}
+.heroSection .heroText .description {
+  font-size: 1vw;
+  color: rgb(192, 250, 255);
+  letter-spacing: 0.1em;
+}
+.heroSection .cmsBasicFlow {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5vw;
+  text-align: center;
+  font-size: 1vw;
+  color: rgb(255, 255, 255);
+  letter-spacing: 0.1em;
+}
+.heroSection .cmsBasicFlow .step {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+.heroSection .cmsBasicFlow .step img {
+  width: 3vw;
+}
+.heroSection .CTA1 {
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  border: 0.1em solid rgb(255, 255, 255);
+  border-radius: 0.5em;
+  padding: 0.5em 1.5em;
+  font-size: 1vw;
+}
+.heroSection .CTA1:hover {
+  background: rgb(192, 250, 255);
+  color: rgb(27, 67, 77);
+  border: 0.1em solid rgb(192, 250, 255);
+}
+
+.siteCategories {
+  overflow: hidden;
+  padding: 5vw 0;
+}
+.siteCategories .upper, .siteCategories .lower {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1em;
+  flex-wrap: nowrap;
+  margin: 1em;
+}
+.siteCategories .upper .theme, .siteCategories .lower .theme {
+  min-width: 25vw;
+  height: 15vw;
+  border-radius: 0.5em;
+  position: relative;
+  overflow: hidden;
+}
+.siteCategories .upper .theme .themeOverlay, .siteCategories .lower .theme .themeOverlay {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+}
+.siteCategories .upper .theme .themeOverlay button, .siteCategories .lower .theme .themeOverlay button {
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  background: none;
+  border: 0.1em solid rgb(255, 255, 255);
+  border-radius: 0.5em;
+  padding: 0.5em 1.5em;
+  font-size: 1vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.siteCategories .upper .theme .themeOverlay button:hover, .siteCategories .lower .theme .themeOverlay button:hover {
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: 0.1em solid rgb(255, 255, 255);
+}
+.siteCategories .upper .theme:hover .themeOverlay, .siteCategories .lower .theme:hover .themeOverlay {
+  left: 0;
+}
+.siteCategories .upper {
+  animation: toRight 15s linear infinite;
+  justify-content: flex-end;
+}
+.siteCategories .upper:hover {
+  animation-play-state: paused;
+}
+.siteCategories .upper .ecom {
+  background: url("gallery/s4-siteTypes/1-ecommerceSite.gif") no-repeat scroll center;
+  background-size: 100% 100%;
+}
+.siteCategories .upper .newspaper {
+  background: url("gallery/s4-siteTypes/2-newspaper&MagazineSite.jpg") no-repeat scroll center;
+  background-size: 100% 100%;
+}
+.siteCategories .upper .business {
+  background: url("gallery/s4-siteTypes/3-businessSite.gif") no-repeat scroll center;
+  background-size: 100% 100%;
+}
+@keyframes toRight {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+.siteCategories .lower {
+  animation: toLeft 20s linear infinite;
+}
+.siteCategories .lower:hover {
+  animation-play-state: paused;
+}
+.siteCategories .lower .article {
+  background: url("gallery/s4-siteTypes/4-articleSite.jpg") no-repeat scroll center;
+  background-size: 100% 100%;
+}
+.siteCategories .lower .event {
+  background: url("gallery/s4-siteTypes/5-eventSite.jpg") no-repeat scroll center;
+  background-size: 100% 100%;
+}
+.siteCategories .lower .portfolio {
+  background: url("gallery/s4-siteTypes/6-portfolioSite.jpg") no-repeat scroll center;
+  background-size: 100% 100%;
+}
+.siteCategories .lower .appointment {
+  background: url("gallery/s4-siteTypes/7-appointmentSite.jpg") no-repeat scroll center;
+  background-size: 100% 100%;
+}
+@keyframes toLeft {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-300%);
+  }
+}
+
+.features {
+  background: rgb(0, 0, 0);
+  color: rgb(10, 179, 193);
+  padding: 7vw 0;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5vw;
+}
+.features img {
+  width: 10vw;
+}
+.features .upper, .features .mid, .features .lower {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5vw;
+}
+.features .upper .feature, .features .mid .feature, .features .lower .feature {
+  height: 27vw;
+  width: 22vw;
+  perspective: 500px;
+  position: relative;
+}
+.features .upper .feature .featureCover, .features .mid .feature .featureCover, .features .lower .feature .featureCover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  background: rgb(0, 0, 0);
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3vh;
+  border: 0.3vw solid rgb(10, 179, 193);
+  border-radius: 0.7em;
+}
+.features .upper .feature .featureCover img, .features .mid .feature .featureCover img, .features .lower .feature .featureCover img {
+  width: 10vw;
+}
+.features .upper .feature .featureCover .featureTitle, .features .mid .feature .featureCover .featureTitle, .features .lower .feature .featureCover .featureTitle {
+  font-size: 2vw;
+  text-align: center;
+}
+.features .upper .feature .featureContent, .features .mid .feature .featureContent, .features .lower .feature .featureContent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(10, 179, 193);
+  color: white;
+  z-index: 2;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1vw;
+  padding: 1.5vw;
+  text-align: left;
+  border: 0.3vw solid rgb(10, 179, 193);
+  border-radius: 0.7em;
+}
+.features .upper .feature .featureContent img, .features .mid .feature .featureContent img, .features .lower .feature .featureContent img {
+  width: 5vw;
+}
+.features .upper .feature .featureContent .featureTitle, .features .mid .feature .featureContent .featureTitle, .features .lower .feature .featureContent .featureTitle {
+  font-size: 1.5vw;
+}
+.features .upper .feature .featureContent .featureDescription, .features .mid .feature .featureContent .featureDescription, .features .lower .feature .featureContent .featureDescription {
+  font-size: 1vw;
+  margin: 1vw 0 0 0;
+}
+.features .upper .featureHero, .features .mid .featureHero, .features .lower .featureHero {
+  background: rgb(10, 179, 193);
+  color: rgb(255, 255, 255);
+  border-color: rgb(10, 179, 193);
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1.5vw;
+  padding: 1.5vw;
+}
+.features .upper .featureHero .title, .features .mid .featureHero .title, .features .lower .featureHero .title {
+  font-size: 3vw;
+}
+.features .upper .featureHero .description, .features .mid .featureHero .description, .features .lower .featureHero .description {
+  font-size: 1.5vw;
+}
+.features .upper .featureHero .viewAllFeatures, .features .mid .featureHero .viewAllFeatures, .features .lower .featureHero .viewAllFeatures {
+  background: rgb(255, 255, 255);
+  color: rgb(10, 179, 193);
+  cursor: pointer;
+  border: 0.1em solid rgb(255, 255, 255);
+  border-radius: 0.5em;
+  padding: 0.5em 1.5em;
+  font-size: 1vw;
+  margin: 2vw 0 0 0;
+}
+.features .upper .featureHero .viewAllFeatures:hover, .features .mid .featureHero .viewAllFeatures:hover, .features .lower .featureHero .viewAllFeatures:hover {
+  background: rgb(0, 0, 0);
+  color: rgb(10, 179, 193);
+  border: 0.1em solid rgb(0, 0, 0);
+}
+
+.designInt {
+  width: 80vw;
+  margin: 20vw auto 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 6vw;
+}
+.designInt .heroText {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2vw;
+}
+.designInt .heroText .heroTitle {
+  font-size: 4vw;
+  color: rgb(27, 67, 77);
+}
+.designInt .heroText .heroDescription {
+  font-size: 1.5vw;
+  color: rgb(0, 0, 0);
+}
+.designInt .heroText .heroButton {
+  background: rgb(27, 67, 77);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  border: 0.1em solid rgb(27, 67, 77);
+  border-radius: 0.5em;
+  padding: 0.5em 1.5em;
+  font-size: 1vw;
+  padding: 0.5em 1.5em;
+  margin: 4vw 0 0 0;
+}
+.designInt .heroText .heroButton:hover {
+  background: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  border: 0.1em solid rgb(0, 0, 0);
+}
+.designInt .heroImg {
+  width: 25vw;
+}
+
+.ecomInt {
+  width: 80vw;
+  margin: 20vw auto 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 6vw;
+}
+.ecomInt .heroText {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 2vw;
+}
+.ecomInt .heroText .heroTitle {
+  font-size: 4vw;
+  text-align: right;
+  color: rgb(27, 67, 77);
+}
+.ecomInt .heroText .heroDescription {
+  font-size: 1.5vw;
+  text-align: right;
+  color: rgb(0, 0, 0);
+}
+.ecomInt .heroText .heroButton {
+  background: rgb(27, 67, 77);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  border: 0.1em solid rgb(27, 67, 77);
+  border-radius: 0.5em;
+  padding: 0.5em 1.5em;
+  font-size: 1vw;
+  padding: 0.5em 1.5em;
+  margin: 4vw 0 0 0;
+}
+.ecomInt .heroText .heroButton:hover {
+  background: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  border: 0.1em solid rgb(0, 0, 0);
+}
+.ecomInt .heroImg {
+  width: 25vw;
+}
+
+.platforms {
+  width: 80vw;
+  margin: 20vw auto 0;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3vw;
+}
+.platforms .platformsContainer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3vw;
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.85);
+  padding: 0 0 5vw 0;
+}
+.platforms .platformsContainer img {
+  width: 10vw;
+}
+.platforms p {
+  font-size: 2vw;
+  color: rgba(27, 67, 77, 0.6);
+}
+.platforms .getApp {
+  background: rgb(27, 67, 77);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  border: 0.1em solid rgb(27, 67, 77);
+  border-radius: 0.5em;
+  padding: 0.5em 1.5em;
+  font-size: 1vw;
+}
+.platforms .getApp:hover {
+  background: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  border: 0.1em solid rgb(0, 0, 0);
+}
+
+.whyUsTitle {
+  font-size: 4vw;
+  text-align: center;
+  color: rgb(19, 96, 116);
+  margin: 20vw 0 7vw 0;
+}
+
+.whyUs {
+  width: 80vw;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 6vw;
+  flex-wrap: nowrap;
+}
+.whyUs .reasons .reason {
+  margin: 0 0 4vw 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 2vw;
+  flex-wrap: nowrap;
+}
+.whyUs .reasons .reason img {
+  width: 7vw;
+}
+.whyUs .reasons .reason .reasonText .title {
+  font-size: 2vw;
+  color: rgb(19, 96, 116);
+  margin: 0 0 1.5vw 0;
+}
+.whyUs .reasons .reason .reasonText .description {
+  font-size: 1vw;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.review {
+  margin: 20vw 0 0 0;
+}
+.review .sectionTitle {
+  font-size: 4vw;
+  text-align: center;
+  color: rgb(10, 179, 193);
+  margin: 0 0 5vw 0;
+}
+.review .sliderContainer {
+  width: 65vw;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 1vw;
+}
+.review .sliderContainer .reviewSlidesContainer {
+  display: flex;
+}
+.review .sliderContainer .reviewSlidesContainer .reviewSlide {
+  min-width: 100%;
+  background: rgb(10, 179, 193);
+  color: rgb(255, 255, 255);
+  padding: 2vw;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5vw;
+}
+.review .sliderContainer .reviewSlidesContainer .reviewSlide img, .review .sliderContainer .reviewSlidesContainer .reviewSlide span, .review .sliderContainer .reviewSlidesContainer .reviewSlide p {
+  display: block;
+  text-align: center;
+}
+.review .sliderContainer .reviewSlidesContainer .reviewSlide .userImage {
+  width: 8.5vw;
+  height: 8.5vw;
+  border: 0.1em solid rgb(10, 179, 193);
+  border-radius: 50%;
+}
+.review .sliderContainer .reviewSlidesContainer .reviewSlide .userName {
+  font-size: 2vw;
+}
+.review .sliderContainer .reviewSlidesContainer .reviewSlide .reviewImg {
+  height: 1.5vw;
+}
+.review .sliderContainer .reviewSlidesContainer .reviewSlide p {
+  font-size: 1.5vw;
+  margin: 1.5vw 0 0 0;
+}
+.review .sliderContainer button {
+  position: absolute;
+  font-size: 3vw;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  background: none;
+  border: 0.1em solid rgb(255, 255, 255);
+  border-radius: 0.5em;
+  padding: 0.5em 1.5em;
+  font-size: 1vw;
+  border-color: rgb(10, 179, 193);
+}
+.review .sliderContainer button:hover {
+  background: rgb(10, 179, 193);
+  color: rgb(255, 255, 255);
+  border: 0.1em solid rgb(10, 179, 193);
+}
+.review .sliderContainer .toPrev {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+.review .sliderContainer .toNext {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(-100%, -50%);
+}
+
+.lastCTA {
+  text-align: center;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3vw;
+  margin: 20vw 0 0 0;
+}
+.lastCTA .ctaTitle {
+  font-size: 4vw;
+  color: rgb(19, 96, 116);
+}
+.lastCTA .ctaSubtitle {
+  font-size: 2vw;
+  color: rgb(19, 96, 116);
+}
+.lastCTA .newsletter {
+  background: rgb(19, 96, 116);
+  width: 55vw;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7vw;
+  padding: 3.5vw 0;
+  border-radius: 1vw;
+}
+.lastCTA .newsletter .nlTitle {
+  font-size: 2vw;
+  color: rgb(255, 255, 255);
+}
+.lastCTA .newsletter .nlSubtitle {
+  font-size: 1vw;
+  color: rgba(255, 255, 255, 0.6);
+}
+.lastCTA .newsletter form {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  flex-wrap: nowrap;
+  margin: 2vw 0 0 0;
+}
+.lastCTA .newsletter form input[type=email] {
+  font-size: 1vw;
+  width: 22vw;
+  border: 0.1vw solid rgb(255, 255, 255);
+  background: none;
+  border-radius: 1.5vw 0 0 1.5vw;
+  color: rgb(255, 255, 255);
+}
+.lastCTA .newsletter form input[type=email]::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+.lastCTA .newsletter form input[type=submit] {
+  font-size: 1vw;
+  width: 7vw;
+  text-align: center;
+  border: 0.1em solid rgb(255, 255, 255);
+  background: rgb(255, 255, 255);
+  color: rgb(19, 96, 116);
+  border-radius: 0 1.5vw 1.5vw 0;
+  cursor: pointer;
+}
+.lastCTA .newsletter form input {
+  padding: 0.8vw 1.5vw;
+}
+.lastCTA .cta {
+  color: rgb(19, 96, 116);
+  cursor: pointer;
+  background: none;
+  border: 0.1em solid rgb(19, 96, 116);
+  border-radius: 0.5em;
+  padding: 0.5em 1.5em;
+  font-size: 1vw;
+}
+.lastCTA .cta:hover {
+  background: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  border: 0.1em solid rgb(0, 0, 0);
+}
+
+.footer {
+  padding: 2vw 5vw;
+  margin: 20vw 0 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4vw;
+  background: aliceblue;
+  background: rgb(27, 67, 77);
+}
+
+.linkContainer {
+  display: flex;
+  gap: 4vw;
+}
+
+.ftxt {
+  display: block;
+  margin: 0 0 1vw 0;
+  font-size: 1.5vw;
+  color: rgb(255, 255, 255);
+}
+
+.link {
+  display: block;
+  text-decoration: none;
+  color: gray;
+  font-size: 0.7vw;
+  margin: 0.5vw 0 0 0;
+  font-size: 1vw;
+  color: rgba(255, 255, 255, 0.6);
+}
+.link:hover {
+  color: rgb(255, 255, 255);
+}
+
+.link--logo {
+  font-size: 1.5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.link--logo img {
+  margin: 0 0.3vw 0 0;
+  border-radius: 50%;
+  height: 15vw;
+  width: 15vw;
+}
+
+.privacy {
+  display: flex;
+  gap: 1vw;
+}
+
+@media (max-width: 768px) {
+  .sticky-logoProgressBar .logoContainer .logo {
+    width: 20vw;
+  }
+  .heroSection {
+    gap: 10vw;
+  }
+  .heroSection .heroText {
+    gap: 3vw;
+  }
+  .heroSection .heroText .title {
+    font-size: 6vw;
+  }
+  .heroSection .heroText hr {
+    width: 65vw;
+  }
+  .heroSection .heroText .description {
+    font-size: 1.8vw;
+  }
+  .heroSection .cmsBasicFlow {
+    font-size: 1.8vw;
+  }
+  .heroSection .cmsBasicFlow .step img {
+    width: 5vw;
+  }
+  .heroSection .CTA1 {
+    font-size: 1.8vw;
+  }
+  .siteCategories .upper .theme, .siteCategories .lower .theme {
+    min-width: 35vw;
+    height: 20vw;
+  }
+  /*
+      fontSize($size); 
+      extraLarge(6), 
+      veryLarge(5), 
+      large(4), 
+      medium(3), 
+      small(2), 
+      verySmall(1.5), 
+      extraSmall(1)
+      ------fonts-------
+      %heading-font, %description-font, %button-font, %identifier-font
+
+      ------colors-------
+      $brand, $brand-transparent-forBg, $brand-transparent-forTxt, $brand-lightVersion
+      $black, $black-transparent-forBg, $black-transparent-forTxt
+      $skyblue, $skyblue-transparent
+      $white, $white-transparent-forTxt
+      $topaz
+
+      ------templates-------
+      arrange($dir, $justifyContent, $alignItems, $gap)
+      bgImg($url);
+      position($elementPostion); centerLeft, center, centerRight (when '.container {position: relative;}')
+      fontSize($size); extraLarge(6), veryLarge(5), large(4), medium(3), small(2), verySmall(1.5), extraSmall(1)
+      filledButton($bgColor, $txtColor, $hoverBgColor, $hoverTxtColor)
+      noFilledButton($color, $hoverBgColor, $hoverTxtColor)
+  */
+}
+
+/*# sourceMappingURL=style.css.map */
